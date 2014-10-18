@@ -13,7 +13,7 @@ attr_accessor :dishes
 	end
 
 	def list_dishes
-		dishes.each {|name, cost| puts "#{name} costs £#{cost}"}
+		@dishes.each {|dish| return "#{dish.name}, £#{'%.2f' % dish.cost}"}
 	end
 
 end

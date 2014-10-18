@@ -3,12 +3,14 @@ require 'menu'
 describe Menu do 
 
 	let(:menu){Menu.new}
-	let(:pizza){double :dish, name: "Pizza", cost: 3.20}
-	# let(:burger){double :dish(name: "Burger", cost: 5.25)}
+	let(:dish){double :dish, name: "Pizza", cost: 3.20}
 
-	xit "should be able to place dishes on the menu" do
-		menu.place(pizza)
-		# menu.place(burger)
+	it "should be able to receive a new dish" do 
+		expect{menu.place(:dish)}.to change{menu.dishes.count}.by (1)
+	end
+
+	it "should be able to list dishes on the menu" do
+		menu.place(dish)
 		expect(menu.list_dishes).to eq("Pizza, £3.20")
 	end
 
