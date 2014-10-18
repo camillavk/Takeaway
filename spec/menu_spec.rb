@@ -11,7 +11,7 @@ describe Menu do
 
 	it "should be able to list dishes on the menu" do
 		menu.place(dish)
-		expect(menu.list_dishes).to eq("Pizza, £3.20")
+		expect(menu.list_dishes).to include("Pizza, £3.20")
 	end
 
 end
