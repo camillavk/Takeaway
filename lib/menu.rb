@@ -1,4 +1,4 @@
-require 'dishes'
+require_relative 'dishes'
 
 class Menu
 
