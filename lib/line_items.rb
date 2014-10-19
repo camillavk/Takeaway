@@ -2,24 +2,15 @@ require_relative 'dishes'
 
 class LineItem
 
-	attr_accessor :item_list, :total, :quantity
+	attr_accessor :dish, :quantity
 
-	def initialize
-		@item_list = []
+	def initialize(dish, quantity = 1)
+		@dish = dish
 		@quantity = quantity
-		@total = total
 	end
 
-	def add_item(dish, quantity)
-		@item_list << [dish.name, quantity, dish.cost*quantity]
-	end
-
-	def item_cost(dish, quantity)
-		@item_list.each do
-			dish
-			@total = dish.cost * quantity
-				return "#{quantity} #{dish.name} costs £#{'%.2f' % total}"
-		end
+	def total
+			dish.cost * quantity
 	end
 
 
