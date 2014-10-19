@@ -13,11 +13,11 @@ class Order
 		final_order << line_item
 	end
 
-def display
-@final_order.map.with_index do |line_item, index|
-return "#{index+1}. #{line_item.quantity} #{line_item.dish.name} - £#{'%.2f' % line_item.total}"
-end
-end
+	def display
+		@final_order.map.with_index do |line_item, index|
+			return "#{index+1}. #{line_item.quantity} #{line_item.dish.name} - £#{'%.2f' % line_item.total}"
+		end
+	end
 
 	def final_price
 			@final_order.inject(0) { |total,line_item| total += line_item.total }

@@ -11,10 +11,6 @@ class Takeaway
 		@orders = []
 	end
 
-	def order_count
-		orders.count
-	end
-
 	def take_order(order, customer)
 		orders << order
 		send_confirmation(order, customer)
@@ -24,8 +20,13 @@ class Takeaway
 		orders.reject!{|order| order == complete_order}
 	end
 
+	def order_count
+		orders.count
+	end
 
-def send_confirmation(order, customer)
+	private
+
+	def send_confirmation(order, customer)
 		account_sid = "ACc45838593bc587799da37ef4f9460edf"
 		auth_token = "9b8e42a2c3806e0d5e452f797230af5f"
 
