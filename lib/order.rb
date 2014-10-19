@@ -20,8 +20,6 @@ end
 end
 
 	def final_price
-		# @final_order.map {|dish| dish.total}.inject(&:+)
-			# return "Total cost is £#{'%.2f' % total_cost}"
 			@final_order.inject(0) { |total,line_item| total += line_item.total }
 	end
 

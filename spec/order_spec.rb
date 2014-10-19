@@ -7,7 +7,6 @@ describe Order do
 	let(:pizza){Dish.new("Pizza", 3)}
 	let(:line_item_three){LineItem.new(pizza, 2)}
 	let(:line_item){double :line_item, total: 3}
-	# let(:line_item2){LineItem.new(pizza, 3)}
 	let(:line_item2){double :line_item, total: 4}
 
 	it "should be able to add lines to the order" do
