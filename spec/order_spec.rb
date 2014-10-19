@@ -19,10 +19,10 @@ describe Order do
 		expect(order.display).to eq("1. 2 Pizza - £6.00")
 	end
 
-	xit "should be able to calculate the total cost of the order" do
-		order.add_line(:line_item)
-		order.add_line(:line_item2)
-		expect(order.final_price).to eq(12)
+	it "should be able to calculate the total cost of the order" do
+		order.add_line(line_item)
+		order.add_line(line_item2)
+		expect(order.final_price).to eq(7)
 	end
 
 end
